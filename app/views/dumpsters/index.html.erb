@@ -1,0 +1,11 @@
+<h1>Dumpsters</h1>
+
+<%@dumpsters.each do |dumpster|%>
+    <div>
+        <h3><%= dumpster.name %></h3>
+        <p><%= dumpster.address %></p>
+        <p><%= dumpster.city %></p>
+        <p><%= dumpster.state %></p>
+        <p>Description: <%= dumpster.description %></p>
+    </div>
+    <%end%>
