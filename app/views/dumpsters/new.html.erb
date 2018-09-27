@@ -1,6 +1,7 @@
 <h2>New Dumpster Form:</h2>
-<form action="/dumpster" method= "POST">
-    <input type="hidden" name="authenticity_token" value=" <%=form_authenticity_token%>" />
+<form action="/dumpsters" method= "POST">
+    <input type="hidden" name="authenticity_token" value=" <%=form_authenticity_token%>" >
+
     <div>
         <label for="dumpster_name">Name:</label>
         <div>
@@ -30,6 +31,13 @@
         <div>
             <textarea name="dumpster[description]" value="<%=@dumpster.description%>"></textarea>
         </div>
+    <div>
+        <label for="dumpster_goods">Types of Goods:</label>
+        <% 5.times.each do%>
+            <div>
+                <textarea name="dumpster[goods][][name]" placeholder="Type of Goods"></textarea>
+            </div>
+        <%end%>
     </div>
     <input type="submit" value="Create Dumpster" />
 </form>

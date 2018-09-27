@@ -1,4 +1,5 @@
 class Good < ApplicationRecord
-    belong_to :user
-    belong_to :dumpster 
+    belongs_to :user
+    belongs_to :dumpster 
+    validates :name, presence: :true
 end

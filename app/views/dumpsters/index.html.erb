@@ -1,5 +1,7 @@
 <h1>Dumpsters</h1>
 
+<%= link_to "Create new Dumpster", new_dumpster_path %>
+
 <%@dumpsters.each do |dumpster|%>
     <div>
         <h3><%= dumpster.name %></h3>
@@ -7,5 +9,13 @@
         <p><%= dumpster.city %></p>
         <p><%= dumpster.state %></p>
         <p>Description: <%= dumpster.description %></p>
+        <% if dumpster.goods.count > 0%>
+            <p>Types of Goods</p>
+            <ul>
+                <% dumpster.goods.each do |good|%>
+                    <li><%= good.name %></li>
+                <%end%>
+            </ul>
+        <%end%>
     </div>
-    <%end%>
+<%end%>
