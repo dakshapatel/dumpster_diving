@@ -26,11 +26,3 @@ class DumpstersController < ApplicationController
     end 
 end
 
-{"authenticity_token"=>"6sXEdDe7sVmCJfJuddLptFmeQckVK3H5ReVBZFXL7kUG2AvOeteHFugjBBmzWWGiEa3tVqrqlo2UolJ2nIbVvw==", 
-    "dumpster"=>{
-        "name"=>"Walmart", 
-        "address"=>"60 Walmart Circle", 
-        "city"=>"Baltimore", 
-        "state"=>"MD", 
-        "description"=>"NE corner of parking lot. ", 
-        "goods"=>[{"name"=>"BabyClothes"}, {"name"=>"Fruit"}, {"name"=>"Orange Juice"}, {"name"=>""}, {"name"=>""}]}, "controller"=>"dumpsters", "action"=>"create"}
