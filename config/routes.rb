@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   root "home#home"
-  get "/signin", to: "sessions#new"
+  get "/signin", to: "sessions#signin"
+  get "/signup", to: "sessions#signup"
   resources :goods
   resources :dumpsters, only: [:index, :new, :create]
   resources :users

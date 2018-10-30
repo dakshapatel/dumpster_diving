@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2018_09_27_204200) do
     t.string "name"
     t.string "city"
     t.string "state"
+    t.integer "zipcode"
     t.string "address"
     t.string "description"
     t.datetime "created_at", null: false
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_09_27_204200) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

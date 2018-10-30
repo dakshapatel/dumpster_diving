@@ -4,6 +4,7 @@ class CreateDumpsters < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :city
       t.string :state
+      t.integer :zipcode
       t.string :address
       t.string :description
 
