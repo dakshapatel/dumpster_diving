@@ -1,9 +1,19 @@
 
-<%= form_for @user, url: "/users/login" do |f| %>
-   <div class="field"><%= f.label :name, "Select your name" %><br>
-    <%= f.collection_select(:id, @users, :id, :name) %>
+
+<%= form_for @user, url: "/dumpsters"  do |f| %>
+   <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :password, "Enter your password" %><br>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :email, "Enter your email" %><br>
+    <%= f.text_field :email, class: "form-control" %>
   </div>
    <div class="actions">
-    <%= f.submit "Sign In"  %>
+    <%= f.submit "Sign Up", class: "btn btn-primary" %>
   </div>
-<% end %> 
+<% end %>

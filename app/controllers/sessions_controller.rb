@@ -1,9 +1,6 @@
 class SessionsController < ApplicationController
 
-    def destroy
-        session[:user_id] = nil
-        redirect_to root_url
-    end
+    skip_before_action :verify_user_is_authenticated, only: [:new,:create]
 
     def new
         @user = User.new
@@ -14,10 +11,16 @@ class SessionsController < ApplicationController
         @user = User.find_by(name: params[:user][:name])
         if @user && @user.authenticate(params[:user][:password])
           session[:user_id] = @user.id
-          redirect_to user_path(@user), notice: "Welcome back to the theme park!"
+          
         else
+            flash[:danger] = "invalid name/password combination"
           redirect_to signin_path
         end
+    end
+
+    def destroy
+        session[:user_id] = nil
+        redirect_to root_url
     end
 
 end
