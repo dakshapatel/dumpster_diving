@@ -21,6 +21,10 @@ class DumpstersController < ApplicationController
        end 
     end 
 
+    def edit
+    end 
+
+
     private
 
     def dumpster_params
