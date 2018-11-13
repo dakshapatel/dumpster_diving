@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+    #before_action :verify_user_is_authenticated
     def new 
         @user = User.new
     end 

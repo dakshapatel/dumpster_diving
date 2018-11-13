@@ -1,12 +1,11 @@
 class CreateDumpsters < ActiveRecord::Migration[5.2]
   def change
     create_table :dumpsters do |t|
-      t.string :name
+      t.string :store_name
+      t.string :address
       t.string :city
       t.string :state
       t.integer :zipcode
-      t.string :address
-      t.string :description
 
       t.timestamps
     end

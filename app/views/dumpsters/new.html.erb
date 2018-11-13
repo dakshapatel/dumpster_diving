@@ -1,43 +1,35 @@
 <h2>New Dumpster Form:</h2>
-<form action="/dumpsters" method= "POST">
-    <input type="hidden" name="authenticity_token" value=" <%=form_authenticity_token%>" >
 
-    <div>
-        <label for="dumpster_name">Name:</label>
-        <div>
-            <input type="text" name="dumpster[name]" value="<%=@dumpster.name%>"/>
-        </div>
+<%=form_for (@dumpster) do |f|%>
+
+    <div class="form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class: "form-control" %>
     </div>
-     <div>
-        <label for="dumpster_address">Address:</label>
-        <div>
-            <input type="text" name="dumpster[address]" value="<%=@dumpster.address%>"/>
-        </div>
+
+    <div class="form-group">
+        <%= f.label :address %><br>
+        <%= f.text_field :address, class: "form-control" %>
     </div>
-     <div>
-        <label for="dumpster_city">City:</label>
-        <div>
-            <input type="text" name="dumpster[city]" value="<%=@dumpster.city%>"/>
-        </div>
+
+    <div class="form-group">
+        <%= f.label :city %><br>
+        <%= f.text_field :city, class: "form-control" %>
     </div>
-     <div>
-        <label for="dumpster_state">State:</label>
-        <div>
-            <input type="text" name="dumpster[state]" value="<%=@dumpster.state%>"/>
-        </div>
+
+    <div class="form-group">
+        <%= f.label :state %><br>
+        <%= f.text_field :state, class: "form-control" %>
     </div>
-    <div>
-        <label for="dumpster_description">Description:</label>
-        <div>
-            <textarea name="dumpster[description]" value="<%=@dumpster.description%>"></textarea>
-        </div>
-    <div>
-        <label for="dumpster_goods">Types of Goods:</label>
-        <% 5.times.each do%>
-            <div>
-                <textarea name="dumpster[goods][][name]" placeholder="Type of Goods"></textarea>
-            </div>
-        <%end%>
+
+    <div class="form-group">
+        <%= f.label :zipcode %><br>
+        <%= f.text_field :zipcode, class: "form-control" %>
     </div>
-    <input type="submit" value="Create Dumpster" />
-</form>
+
+    <div class="form-group">
+        <%= f.label :description %><br>
+        <%= f.text_field :description, class: "form-control" %>
+    </div>
+<%end%>
+

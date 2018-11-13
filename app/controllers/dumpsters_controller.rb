@@ -1,5 +1,5 @@
 class DumpstersController < ApplicationController
-    skip_before_action :verify_authenticity_token  
+    #skip_before_action :verify_authenticity_token  
 
     def index 
         @dumpsters = Dumpster.all
@@ -9,7 +9,8 @@ class DumpstersController < ApplicationController
         @dumpster = Dumpster.find_by(id: params[:id])
 
     def new
-        @dumpster = Dumpster.new 
+        binding.pry
+        @dumpster = Dumpster.new
     end
     
     def create 
