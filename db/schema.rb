@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_202850) do
   end
 
   create_table "dumpsters", force: :cascade do |t|
-    t.string "store_name"
+    t.string "name"
     t.string "address"
     t.string "city"
     t.string "state"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_202850) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "username"
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false

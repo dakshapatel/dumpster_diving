@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   get "/signin", to: "sessions#new", as: 'signin'
   post "/signin", to: "sessions#create"
   get "/signup", to: "users#new", as:'signup'
+  
+  get '/dumpsters', to: 'dumpsters#index'
+  get '/dumpsters/new', to: 'dumpsters#new', as: 'new_dumpster'
+  post '/dumpsters', to: 'dumpsters#create'
 
-  resources :dumpsters
+
   resources :goods
   
   resources :users

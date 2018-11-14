@@ -5,22 +5,22 @@ class DumpstersController < ApplicationController
         @dumpsters = Dumpster.all
     end 
 
-    def show
-        @dumpster = Dumpster.find_by(id: params[:id])
-
     def new
-        binding.pry
         @dumpster = Dumpster.new
     end
+
+    def show
+        @dumpster = Dumpster.find_by(params[:id])
+    end
     
-    def create 
-       @dumpster = Dumpster.new(dumpster_params)
-       if @dumpster.save
-        redirect_to dumpsters_path
-       else
-        render :new
-       end 
-    end 
+    # def create 
+    #    @dumpster = Dumpster.new(dumpster_params)
+    #    if @dumpster.save
+    #     redirect_to dumpsters_path
+    #    else
+    #     render :new
+    #    end 
+    # end 
 
     def edit
     end 
@@ -29,7 +29,8 @@ class DumpstersController < ApplicationController
     private
 
     def dumpster_params
-        params.require(:dumpster).permit(:name, :address, :city, :state, :zipcode, :description, goods: [:name])
+        params.require(:dumpster).permit(:name, :address, :city, :state, :zipcode, goods: [:name])
     end 
+
+
 end
-end 
