@@ -1,6 +1,6 @@
 
 
-<%= form_for @user,  do |f| %>
+<%= form_for @user, url: dumpsters_path(@dumpster) do |f| %>
    <div class="form-group">
     <%= f.label :username %><br>
     <%= f.text_field :username, class: "form-control" %>
